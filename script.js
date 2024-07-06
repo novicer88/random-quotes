@@ -1,16 +1,60 @@
 const quotes = [
-  'The only way to do great work is to love what you do. - Steve Jobs',
-  'Innovation distinguishes between a leader and a follower. - Steve Jobs',
-  "Your time is limited, so don't waste it living someone else's life. - Steve Jobs",
+  {
+    quote: 'The only way to do great work is to love what you do',
+    author: 'Steve Jobs',
+  },
+  {
+    quote: 'Innovation distinguishes between a leader and a follower',
+    author: 'Steve Jobs',
+  },
+  {
+    quote:
+      "Your time is limited, so don't waste it living someone else's life.",
+    author: 'Steve Jobs',
+  },
+  {
+    quote: 'Life is what happens when you’re busy making other plans.',
+    author: 'John Lennon',
+  },
+  {
+    quote: 'Get busy living or get busy dying.',
+    author: 'Stephen King',
+  },
+  {
+    quote: 'You only live once, but if you do it right, once is enough.',
+    author: 'Mae West',
+  },
+  {
+    quote:
+      'Many of life’s failures are people who did not realize how close they were to success when they gave up.',
+    author: 'Thomas Edison',
+  },
+  {
+    quote:
+      'If you want to live a happy life, tie it to a goal, not to people or things.',
+    author: 'Albert Einstein',
+  },
+  {
+    quote: 'Never let the fear of striking out keep you from playing the game.',
+    author: 'Babe Ruth',
+  },
+  {
+    quote:
+      'Money and success don’t change people; they merely amplify what is already there.',
+    author: 'Will Smith',
+  },
 ];
 
 const quoteElement = document.getElementById('quote');
+const quoteAuthorElement = document.getElementById('quote-author');
 const generateBtn = document.getElementById('generate-btn');
 
 function generateRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const randomQuote = quotes[randomIndex];
-  quoteElement.textContent = randomQuote;
+  const { quote, author } = randomQuote;
+  quoteElement.textContent = quote;
+  quoteAuthorElement.textContent = author;
 }
 
 generateBtn.addEventListener('click', generateRandomQuote);
